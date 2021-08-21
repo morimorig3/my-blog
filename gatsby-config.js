@@ -1,0 +1,20 @@
+require('dotenv').config();
+
+module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://www.yourdomain.tld',
+    title: 'my-blog',
+  },
+  plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+      },
+    },
+  ],
+};
