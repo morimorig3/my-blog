@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://blog.morimorig3.com/',
-    title: 'my-blog',
+    title: 'morimorig3.Blog',
   },
   plugins: [
     `gatsby-plugin-image`,
