@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import Layout from '../component/layout';
 
@@ -12,6 +12,24 @@ const BlogPost = ({ data }) => {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <p className="mb-6">{children}</p>
+      ),
+      [INLINES.HYPERLINK]: (node, children) => (
+        <a
+          className="underline"
+          href={node.data.uri}
+          target={
+            node.data.uri.startsWith('https://blog.morimorig3.com/')
+              ? '_self'
+              : '_blank'
+          }
+          rel={
+            node.data.uri.startsWith('https://blog.morimorig3.com/')
+              ? ''
+              : 'noopener noreferrer'
+          }
+        >
+          {children}
+        </a>
       ),
     },
   };
