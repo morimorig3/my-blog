@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../component/layout';
 import { RiFolderLine } from 'react-icons/ri';
 
-const IndexPage = ({ data }) => {
+const CategoryPage = ({ data }) => {
   const articles = data.allContentfulBlogPost.edges;
   return (
     <Layout>
@@ -29,17 +29,19 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export default IndexPage;
+export default CategoryPage;
 
 export const query = graphql`
-  query {
-    allContentfulBlogPost {
+  query ($id: String!) {
+    allContentfulBlogPost(
+      sort: { fields: publishDate, order: DESC }
+      filter: { category: { id: { eq: $id } } }
+    ) {
       edges {
         node {
-          id
+          title
           slug
           publishDate(formatString: "YYYY-MM-DD")
-          title
           category {
             category
             categorySlug

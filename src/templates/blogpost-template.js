@@ -1,8 +1,9 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import Layout from '../component/layout';
+import { RiFolderLine } from 'react-icons/ri';
 
 const BlogPost = ({ data }) => {
   const options = {
@@ -40,10 +41,17 @@ const BlogPost = ({ data }) => {
         key={article.id}
         className="mb-6 last:m-0 rounded-lg bg-gray-100 p-4"
       >
-        <p className="text-gray-500 text-sm">{article.publishDate}</p>
-        <h2 className="text-xl font-bold pb-2 border-b-2 border-gray-400 border-dashed mb-2">
-          {article.title}
-        </h2>
+        <header className="pb-2 mb-2 border-gray-400 border-b-2 border-dashed">
+          <p className="text-gray-500 text-sm">{article.publishDate}</p>
+          <h2 className="text-xl font-bold">{article.title}</h2>
+          <Link
+            to={`/category/${article.category.categorySlug}/`}
+            className="text-gray-500 flex items-center"
+          >
+            <RiFolderLine className="mr-1" />
+            {article.category.category}
+          </Link>
+        </header>
         <div className="leading-loose">
           {renderRichText(article.body, options)}
         </div>
@@ -57,6 +65,10 @@ export default BlogPost;
 export const query = graphql`
   query ($id: String!) {
     contentfulBlogPost(id: { eq: $id }) {
+      category {
+        category
+        categorySlug
+      }
       title
       publishDate(formatString: "YYYY-MM-DD")
       id
