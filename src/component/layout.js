@@ -50,6 +50,7 @@ const Layout = ({ children }) => {
                 src="../images/profile.jpg"
                 alt="profile写真"
                 as="figure"
+                layout="fullWidth"
               />
               <div className="flex-grow">
                 <p className="font-bold">morimorig3</p>
