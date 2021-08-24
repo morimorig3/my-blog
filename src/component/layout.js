@@ -46,10 +46,11 @@ const Layout = ({ children }) => {
             </h2>
             <div className="flex gap-x-4 lg:block">
               <StaticImage
-                className="flex-shrink-0 rounded-full w-20 block mx-auto mb-4"
+                className="flex-shrink-0 w-20 block mx-auto mb-4"
                 src="../images/profile.jpg"
                 alt="profile写真"
                 as="figure"
+                imgClassName="rounded-full"
                 layout="fullWidth"
               />
               <div className="flex-grow">
