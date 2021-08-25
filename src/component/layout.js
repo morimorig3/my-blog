@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
     query {
       site {
         siteMetadata {
-          title
+          defaultTitle
         }
       }
     }
@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
           to="/"
           className="font-righteous block text-center text-xl leading-none font-bold text-gray-100"
         >
-          {data.site.siteMetadata.title}
+          {data.site.siteMetadata.defaultTitle}
         </Link>
         <a href="https://www.morimorig3.com/" className="text-gray-100">
           <HiHome size="1.5em" />
