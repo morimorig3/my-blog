@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 import Layout from '../component/layout';
-import SEO from '../component/seo';
+import Seo from '../component/seo';
 import { RiFolderLine } from 'react-icons/ri';
 
 const BlogPost = ({ data }) => {
@@ -38,7 +38,7 @@ const BlogPost = ({ data }) => {
   const article = data.contentfulBlogPost;
   return (
     <>
-      <SEO title={article.title} />
+      <Seo title={article.title} />
       <Layout>
         <article
           key={article.id}

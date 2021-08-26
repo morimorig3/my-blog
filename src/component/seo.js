@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const SEO = ({ title, description, article }) => {
+const Seo = ({ title, description, article }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
   const {
@@ -39,7 +39,7 @@ const SEO = ({ title, description, article }) => {
   );
 };
 
-export default SEO;
+export default Seo;
 
 const query = graphql`
   query SEO {
