@@ -33,7 +33,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    allContentfulBlogPost {
+    allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
       edges {
         node {
           id
