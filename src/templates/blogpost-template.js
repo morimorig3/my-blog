@@ -3,8 +3,14 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../component/layout';
 import Seo from '../component/seo';
 import { RiFolderLine } from 'react-icons/ri';
+import rehypeReact from 'rehype-react';
+import ArticleImage from '../component/articleImage';
 
 const BlogPost = ({ data }) => {
+  const renderAst = new rehypeReact({
+    createElement: React.createElement,
+    components: { 'article-image': ArticleImage },
+  }).Compiler;
   const article = data.contentfulBlogPost;
   return (
     <>
@@ -25,12 +31,15 @@ const BlogPost = ({ data }) => {
               {article.category.category}
             </Link>
           </header>
-          <div
+          {/* <div
             className="py-4 leading-6"
             dangerouslySetInnerHTML={{
               __html: article.content.childMarkdownRemark.html,
             }}
-          />
+          /> */}
+          <div className="py-4 leading-6">
+            {renderAst(article.content.childMarkdownRemark.htmlAst)}
+          </div>
         </article>
       </Layout>
     </>
@@ -51,7 +60,7 @@ export const query = graphql`
       id
       content {
         childMarkdownRemark {
-          html
+          htmlAst
         }
       }
     }

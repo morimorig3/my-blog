@@ -10,6 +10,7 @@ module.exports = {
     twitterUsername: '@morimorig3',
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -26,11 +27,25 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
-    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-component`,
+            options: {
+              components: ['article-image'],
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              linkImagesToOriginal: false,
+              withWebp: true,
+              showCaptions: true,
+              backgroundColor: 'transparent',
+            },
+          },
           {
             resolve: `gatsby-remark-classes`,
             options: {
@@ -39,7 +54,7 @@ module.exports = {
                   'font-bold text-2xl border-b border-gray-400 pb-2 mb-4 mt-10',
                 'heading[depth=2]':
                   'font-bold text-xl border-b border-gray-400 pb-2 mb-4 mt-8',
-                'heading[depth=3]': 'font-bold text-lg mb-2',
+                'heading[depth=3]': 'font-bold text-lg mb-2 mt-8',
                 paragraph: 'mb-4',
                 link: 'underline',
                 'list[ordered=false]': 'list-disc pl-5 mb-4',

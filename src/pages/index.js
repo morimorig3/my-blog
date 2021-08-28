@@ -15,6 +15,7 @@ const IndexPage = ({ data }) => {
           const { category, categorySlug } = node.category;
           return (
             <ArticleItem
+              key={id}
               id={id}
               publishDate={publishDate}
               slug={slug}

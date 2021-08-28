@@ -1,4 +1,5 @@
 const path = require('path');
+const { createRemoteFileNode } = require('gatsby-source-filesystem');
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
@@ -49,4 +50,49 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+};
+
+exports.onCreateNode = async ({
+  actions,
+  node,
+  createNodeId,
+  cache,
+  store,
+  getNodesByType,
+}) => {
+  const { createNode } = actions;
+
+  if (node.internal.type !== `MarkdownRemark`) return;
+
+  const regex =
+    /^<article-image.+(imageurl|title)="(.[^"]+)"><\/article-image>$/gm;
+  const tags = getNodesByType('MarkdownRemark')
+    .map((e) => e.rawMarkdownBody.match(regex))
+    .filter((e) => !!e)
+    .flat();
+
+  if (!tags) return;
+
+  const images = tags.map((e) => e.match(/imageurl="([^"]*)"/)[1]);
+  if (!images) return;
+
+  await Promise.all(
+    images.map(async (url) => {
+      const fileNode = await createRemoteFileNode({
+        url: url,
+        cache,
+        store,
+        createNode,
+        createNodeId,
+        name: 'articleImage',
+      });
+      fileNode.internal.content = url;
+
+      if (fileNode) {
+        node.localFile___NODE = fileNode.id;
+      }
+
+      return fileNode;
+    })
+  );
 };
