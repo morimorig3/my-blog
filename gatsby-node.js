@@ -1,8 +1,15 @@
 const path = require('path');
 const { createRemoteFileNode } = require('gatsby-source-filesystem');
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions;
+exports.createPages = async ({
+  actions: { createPage },
+  graphql,
+  reporter,
+}) => {
+  const blogPostTemplate = path.resolve(`./src/templates/blogpost-template.js`);
+  const categoryPageTemplate = path.resolve(
+    `./src/templates/category-template.js`
+  );
 
   const response = await graphql(`
     {
@@ -35,7 +42,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   articles.forEach(({ node }) => {
     createPage({
       path: `/${node.slug}/`,
-      component: path.resolve(`./src/templates/blogpost-template.js`),
+      component: blogPostTemplate,
       context: {
         id: node.id,
       },
@@ -44,7 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   categories.forEach(({ node }) => {
     createPage({
       path: `/category/${node.categorySlug}/`,
-      component: path.resolve(`./src/templates/category-template.js`),
+      component: categoryPageTemplate,
       context: {
         id: node.id,
       },
@@ -53,46 +60,40 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 };
 
 exports.onCreateNode = async ({
-  actions,
+  actions: { createNode },
   node,
+  getCache,
   createNodeId,
-  cache,
-  store,
-  getNodesByType,
 }) => {
-  const { createNode } = actions;
-
   if (node.internal.type !== `MarkdownRemark`) return;
+  const { id, rawMarkdownBody } = node;
 
   const regex =
-    /^<article-image.+(imageurl|title)="(.[^"]+)"><\/article-image>$/gm;
-  const tags = getNodesByType('MarkdownRemark')
-    .map((e) => e.rawMarkdownBody.match(regex))
-    .filter((e) => !!e)
-    .flat();
+    /^<article-image.+(imageurl|title|href)="(.[^"]+)"><\/article-image>$/gm;
+  const tags = rawMarkdownBody.match(regex);
 
   if (!tags) return;
 
-  const images = tags.map((e) => e.match(/imageurl="([^"]*)"/)[1]);
-  if (!images) return;
+  const urls = tags.map((tag) => tag.match(/imageurl="([^"]*)"/)[1]);
+
+  if (!urls) return;
 
   await Promise.all(
-    images.map(async (url) => {
+    urls.map(async (url) => {
       const fileNode = await createRemoteFileNode({
         url: url,
-        cache,
-        store,
+        getCache,
         createNode,
         createNodeId,
+        parentNodeId: id,
         name: 'articleImage',
       });
+
       fileNode.internal.content = url;
 
       if (fileNode) {
         node.localFile___NODE = fileNode.id;
       }
-
-      return fileNode;
     })
   );
 };

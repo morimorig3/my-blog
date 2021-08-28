@@ -15,7 +15,7 @@ const ArticleImage = ({ title, imageurl, href }) => {
               gatsbyImageData(
                 backgroundColor: "transparent"
                 placeholder: BLURRED
-                quality: 70
+                quality: 75
                 layout: FULL_WIDTH
                 aspectRatio: 1.777
                 transformOptions: { fit: CONTAIN }
