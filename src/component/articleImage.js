@@ -37,7 +37,7 @@ const ArticleImage = ({ title, imageurl, href }) => {
     <>
       {href ? (
         <a
-          className="block px-6"
+          className="block"
           href={href}
           target="_blank"
           rel="noopener noreferrer"
@@ -45,7 +45,7 @@ const ArticleImage = ({ title, imageurl, href }) => {
           <GatsbyImage className="block" as="span" image={image} alt={title} />
         </a>
       ) : (
-        <a className="block px-6" href={imageSrc}>
+        <a className="block" href={imageSrc}>
           <GatsbyImage className="block" as="span" image={image} alt={title} />
         </a>
       )}
