@@ -32,18 +32,18 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-component`,
+            resolve: `gatsby-remark-prismjs`,
             options: {
-              components: ['article-image'],
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              showLineNumbers: false,
+              noInlineHighlight: false,
             },
           },
           {
-            resolve: `gatsby-remark-images-contentful`,
+            resolve: `gatsby-remark-component`,
             options: {
-              linkImagesToOriginal: false,
-              withWebp: true,
-              showCaptions: true,
-              backgroundColor: 'transparent',
+              components: ['article-image'],
             },
           },
           {
