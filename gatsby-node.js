@@ -41,7 +41,7 @@ exports.createPages = async ({
 
   articles.forEach(({ node }) => {
     createPage({
-      path: `/${node.slug}/`,
+      path: `post/${node.slug}/`,
       component: blogPostTemplate,
       context: {
         id: node.id,
