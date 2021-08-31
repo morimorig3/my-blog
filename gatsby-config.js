@@ -32,6 +32,12 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-code-titles`,
+            options: {
+              className: 'bg-gray-300 px-3 py-1 inline-block font-bold',
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',

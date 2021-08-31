@@ -5,6 +5,34 @@
  * Ported for PrismJS by Christopher Kapic [@christopher-kapic]
  */
 
+ .gatsby-highlight {
+     position: relative;
+     margin-bottom: 1rem;
+ }
+
+ .gatsby-highlight::before {
+     content: attr(data-language);
+     position: absolute;
+     top: 0;
+     right: 0;
+     opacity: 0.5;
+     padding: 0.5rem;
+     line-height: 1;
+ }
+ .gatsby-highlight[data-language="javascript"]::before {
+     color: #f7df1e;
+ }
+ .gatsby-highlight[data-language="html"]::before {
+     color: #FF7300;
+ }
+ .gatsby-highlight[data-language="css"]::before {
+     color: #89D1FE;
+ }
+
+ .gatsby-code-title {
+    border-radius: 0.3em 0.3em 0 0;
+ }
+
  code[class*="language-"],
  pre[class*="language-"] {
      color: #f8f8f2;
@@ -29,9 +57,9 @@
  /* Code blocks */
  pre[class*="language-"] {
      padding: 1em;
-     margin: 1rem 0;
+     /* margin: 1rem 0; */
      overflow: auto;
-     border-radius: 0.3em;
+     border-radius: 0 0.3em 0.3em 0.3em;
  }
  
  :not(pre) > code[class*="language-"],
