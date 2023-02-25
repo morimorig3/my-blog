@@ -1,7 +1,11 @@
 ---
-author: morimorig3
 title: 最初の記事
-keyVisual: "./key-visual.jpg"
+createdAt: 2023-02-24
+updatedAt: 2023-02-24
+category: [think]
+slug: first-article
+keyVisual: ./key-visual.jpg
+author: morimorig3
 ---
 
 # マークダウンの記事
