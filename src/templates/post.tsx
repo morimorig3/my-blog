@@ -1,6 +1,8 @@
-import { Link } from "gatsby";
-import React from "react";
-import { Layout } from "../components/Layout";
+import React from 'react';
+
+import { Link } from 'gatsby';
+
+import { Layout } from '../components/Layout';
 
 const Post = () => {
   return (

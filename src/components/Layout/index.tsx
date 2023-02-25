@@ -1,11 +1,12 @@
-import React, { ReactNode } from "react";
+import type { ReactNode } from 'react';
+import React from 'react';
 
 interface Props {
   children: ReactNode;
 }
 
 export const Layout = ({ children }: Props) => {
-  console.log("rendered Layout");
+  console.log('rendered Layout');
 
   return (
     <div style={{ margin: `0 auto`, maxWidth: 650, padding: `0 1rem` }}>

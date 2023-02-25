@@ -1,7 +1,11 @@
-import * as React from "react";
-import { graphql, Link, PageProps } from "gatsby";
-import { getImage, GatsbyImage, getSrc } from "gatsby-plugin-image";
-import { Layout } from "../components/Layout";
+import React from 'react';
+
+import { graphql, Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+
+import { Layout } from '../components/Layout';
+
+import type { PageProps } from 'gatsby';
 
 const HomePage = ({ data }: PageProps<Queries.HomePageQuery>) => {
   return (
@@ -17,7 +21,7 @@ const HomePage = ({ data }: PageProps<Queries.HomePageQuery>) => {
               !node.frontmatter?.updatedAt ||
               !node.frontmatter?.category
             ) {
-              throw new Error("props value is invalid.");
+              throw new Error('props value is invalid.');
             }
             const { title, keyVisual, createdAt, updatedAt, category, slug } =
               node.frontmatter;
