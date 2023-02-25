@@ -2,7 +2,7 @@
 
 ポートフォリオサイトのような大型ページではなく、ブログのみに特化したコンパクトで高速なページの構築挑戦する。
 
-# [Demo](https://morimorig3-blog.netlify.app/)
+## [URL](https://blog.morimorig3.com/)
 
 ## 頑張ること
 
@@ -32,4 +32,4 @@
   - Hygraph(Headless CMS)
   - GraphQL
 - ホスティング
-  - Netlify
+  - Vercel
