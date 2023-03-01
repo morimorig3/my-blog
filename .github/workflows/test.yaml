@@ -13,5 +13,4 @@ jobs:
         with:
           node-version: '18.x'
       - run: npm ci
-      - run: npm run develop
       - run: npm run check-all
