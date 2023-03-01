@@ -1,49 +1,56 @@
-import * as React from "react";
-import { graphql, Link, PageProps } from "gatsby";
-import { getImage, GatsbyImage, getSrc } from "gatsby-plugin-image";
+import React from 'react';
+
+import { graphql, Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+
+import { Layout } from '../components/Layout';
+
+import type { PageProps } from 'gatsby';
 
 const HomePage = ({ data }: PageProps<Queries.HomePageQuery>) => {
   return (
-    <main>
-      <ul>
-        {data.allMarkdownRemark.nodes.map((node) => {
-          if (
-            !node.frontmatter?.slug ||
-            !node.frontmatter?.title ||
-            !node.frontmatter?.keyVisual ||
-            !node.frontmatter?.createdAt ||
-            !node.frontmatter?.updatedAt ||
-            !node.frontmatter?.category
-          ) {
-            throw new Error("props value is invalid.");
-          }
-          const { title, keyVisual, createdAt, updatedAt, category, slug } =
-            node.frontmatter;
+    <Layout>
+      <main>
+        <ul>
+          {data.allMarkdownRemark.nodes.map((node) => {
+            if (
+              !node.frontmatter?.slug ||
+              !node.frontmatter?.title ||
+              !node.frontmatter?.keyVisual ||
+              !node.frontmatter?.createdAt ||
+              !node.frontmatter?.updatedAt ||
+              !node.frontmatter?.category
+            ) {
+              throw new Error('props value is invalid.');
+            }
+            const { title, keyVisual, createdAt, updatedAt, category, slug } =
+              node.frontmatter;
 
-          return (
-            <li key={slug}>
-              <Link to={`posts/${slug}`} target="_blank">
-                <GatsbyImage
-                  image={keyVisual.childImageSharp!.gatsbyImageData} // TODO: アサーション
-                  alt="keyVisual"
-                />
-                <p>{title}</p>
-                <p>createdAt: {createdAt}</p>
-                <p>updatedAt: {updatedAt}</p>
-                {category.map((name) => (
-                  <p key={name}>{name}</p>
-                ))}
-                <article
-                  dangerouslySetInnerHTML={{
-                    __html: node.html!, // TODO: アサーション
-                  }}
-                ></article>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </main>
+            return (
+              <li key={slug}>
+                <Link to={`posts/${slug}`} target="_blank">
+                  <GatsbyImage
+                    image={keyVisual.childImageSharp!.gatsbyImageData} // TODO: アサーション
+                    alt="keyVisual"
+                  />
+                  <p>{title}</p>
+                  <p>createdAt: {createdAt}</p>
+                  <p>updatedAt: {updatedAt}</p>
+                  {category.map((name) => (
+                    <p key={name}>{name}</p>
+                  ))}
+                  <article
+                    dangerouslySetInnerHTML={{
+                      __html: node.html!, // TODO: アサーション
+                    }}
+                  ></article>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </main>
+    </Layout>
   );
 };
 

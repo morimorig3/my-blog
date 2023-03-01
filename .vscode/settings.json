@@ -1,0 +1,11 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    // フォーマット実行
+    "source.fixAll": true,
+    // 未使用のimport削除
+    "source.organizeImports": true
+  },
+  "editor.formatOnPaste": true
+}
