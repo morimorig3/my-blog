@@ -1,8 +1,8 @@
-import path from "path";
+import path from 'path';
 
-import type { GatsbyNode } from "gatsby";
+import type { GatsbyNode } from 'gatsby';
 
-export const createPages: GatsbyNode["createPages"] = async function ({
+export const createPages: GatsbyNode['createPages'] = async function ({
   actions,
   graphql,
 }) {
@@ -17,15 +17,16 @@ export const createPages: GatsbyNode["createPages"] = async function ({
       }
     }
   `);
-  if (!data) throw new Error("データの取得に失敗しました");
+  if (!data) throw new Error('データの取得に失敗しました');
+
   data.allMarkdownRemark.nodes.forEach((node) => {
-    if (!node.frontmatter?.slug) throw new Error("slugが存在しません");
+    if (!node.frontmatter?.slug) throw new Error('slugが存在しません');
     const slug = node.frontmatter.slug;
 
     actions.createPage({
       path: `/posts/${slug}`,
       component: path.resolve(`./src/templates/post.tsx`),
-      context: { slug: slug },
+      context: { slug },
     });
   });
 };
