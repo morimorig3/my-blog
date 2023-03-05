@@ -2640,13 +2640,10 @@ declare namespace Queries {
   type HomePageQuery = {
     readonly allMarkdownRemark: {
       readonly nodes: ReadonlyArray<{
-        readonly html: string | null;
         readonly frontmatter: {
           readonly title: string | null;
-          readonly author: string | null;
           readonly category: ReadonlyArray<string | null> | null;
           readonly createdAt: string | null;
-          readonly updatedAt: string | null;
           readonly slug: string | null;
           readonly keyVisual: {
             readonly childImageSharp: {
@@ -2658,11 +2655,35 @@ declare namespace Queries {
     };
   };
 
+  type PostPageQueryVariables = Exact<{
+    id: Scalars['String'];
+  }>;
+
+  type PostPageQuery = {
+    readonly markdownRemark: {
+      readonly html: string | null;
+      readonly frontmatter: {
+        readonly title: string | null;
+        readonly updatedAt: string | null;
+        readonly slug: string | null;
+        readonly author: string | null;
+        readonly category: ReadonlyArray<string | null> | null;
+        readonly createdAt: string | null;
+        readonly keyVisual: {
+          readonly childImageSharp: {
+            readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData;
+          } | null;
+        } | null;
+      } | null;
+    } | null;
+  };
+
   type pagesQueryVariables = Exact<{ [key: string]: never }>;
 
   type pagesQuery = {
     readonly allMarkdownRemark: {
       readonly nodes: ReadonlyArray<{
+        readonly id: string;
         readonly frontmatter: { readonly slug: string | null } | null;
       }>;
     };

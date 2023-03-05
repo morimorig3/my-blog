@@ -1,6 +1,7 @@
+import React from 'react';
+
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import React from 'react';
 
 interface Props {
   node: Queries.HomePageQuery['allMarkdownRemark']['nodes'][number];

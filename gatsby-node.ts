@@ -10,6 +10,7 @@ export const createPages: GatsbyNode['createPages'] = async function ({
     query pages {
       allMarkdownRemark(sort: { frontmatter: { updatedAt: DESC } }) {
         nodes {
+          id
           frontmatter {
             slug
           }
@@ -22,11 +23,16 @@ export const createPages: GatsbyNode['createPages'] = async function ({
   data.allMarkdownRemark.nodes.forEach((node) => {
     if (!node.frontmatter?.slug) throw new Error('slugが存在しません');
     const slug = node.frontmatter.slug;
+    const id = node.id;
+    const context = {
+      id,
+      slug,
+    };
 
     actions.createPage({
       path: `/posts/${slug}`,
       component: path.resolve(`./src/templates/post.tsx`),
-      context: { slug },
+      context,
     });
   });
 };

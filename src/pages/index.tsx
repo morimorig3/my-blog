@@ -2,12 +2,14 @@ import React from 'react';
 
 import { graphql } from 'gatsby';
 
+import { ArticleCard } from '../components/ArticleCard';
 import { Layout } from '../components/Layout';
 
 import type { PageProps } from 'gatsby';
-import { ArticleCard } from '../components/ArticleCard';
 
 const HomePage = ({ data }: PageProps<Queries.HomePageQuery>) => {
+  if (!data) throw new Error('データの取得に失敗しました');
+
   return (
     <Layout>
       <main>

@@ -4,7 +4,7 @@ createdAt: 2023-02-24
 updatedAt: 2023-02-24
 category: [think]
 slug: first-article
-keyVisual: ./key-visual.jpg
+keyVisual: "./key-visual.jpg"
 author: morimorig3
 ---
 
