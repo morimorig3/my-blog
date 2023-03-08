@@ -2635,26 +2635,6 @@ declare namespace Queries {
     readonly maxWidth: number;
   };
 
-  type HomePageQueryVariables = Exact<{ [key: string]: never }>;
-
-  type HomePageQuery = {
-    readonly allMarkdownRemark: {
-      readonly nodes: ReadonlyArray<{
-        readonly frontmatter: {
-          readonly title: string | null;
-          readonly category: ReadonlyArray<string | null> | null;
-          readonly createdAt: string | null;
-          readonly slug: string | null;
-          readonly keyVisual: {
-            readonly childImageSharp: {
-              readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData;
-            } | null;
-          } | null;
-        } | null;
-      }>;
-    };
-  };
-
   type PostListQueryVariables = Exact<{
     skip: Scalars['Int'];
     limit: Scalars['Int'];

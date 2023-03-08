@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 interface Props {
-  node: Queries.HomePageQuery['allMarkdownRemark']['nodes'][number];
+  node: Queries.PostListQuery['allMarkdownRemark']['nodes'][number];
 }
 
 export const ArticleCard = ({ node }: Props) => {
