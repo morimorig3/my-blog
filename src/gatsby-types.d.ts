@@ -2655,6 +2655,29 @@ declare namespace Queries {
     };
   };
 
+  type PostListQueryVariables = Exact<{
+    skip: Scalars['Int'];
+    limit: Scalars['Int'];
+  }>;
+
+  type PostListQuery = {
+    readonly allMarkdownRemark: {
+      readonly nodes: ReadonlyArray<{
+        readonly frontmatter: {
+          readonly title: string | null;
+          readonly category: ReadonlyArray<string | null> | null;
+          readonly createdAt: string | null;
+          readonly slug: string | null;
+          readonly keyVisual: {
+            readonly childImageSharp: {
+              readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData;
+            } | null;
+          } | null;
+        } | null;
+      }>;
+    };
+  };
+
   type PostPageQueryVariables = Exact<{
     id: Scalars['String'];
   }>;
@@ -2684,6 +2707,16 @@ declare namespace Queries {
     readonly allMarkdownRemark: {
       readonly nodes: ReadonlyArray<{
         readonly id: string;
+        readonly frontmatter: { readonly slug: string | null } | null;
+      }>;
+    };
+  };
+
+  type paginationQueryVariables = Exact<{ [key: string]: never }>;
+
+  type paginationQuery = {
+    readonly allMarkdownRemark: {
+      readonly nodes: ReadonlyArray<{
         readonly frontmatter: { readonly slug: string | null } | null;
       }>;
     };

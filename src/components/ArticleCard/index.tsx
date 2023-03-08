@@ -19,7 +19,7 @@ export const ArticleCard = ({ node }: Props) => {
   }
   return (
     <li>
-      <Link to={`posts/${node.frontmatter.slug}`} target="_blank">
+      <Link to={`/${node.frontmatter.slug}`} target="_blank">
         <GatsbyImage
           image={node.frontmatter.keyVisual.childImageSharp.gatsbyImageData} // TODO: アサーション
           alt="keyVisual"

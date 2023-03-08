@@ -1,5 +1,5 @@
 ---
-title: マイサイトの技術スタック
+title: マイサイト作りました
 createdAt: 2021-12-30
 updatedAt: 2021-12-30
 category: [think]
@@ -8,7 +8,7 @@ keyVisual: "../2023-02-24_first-article/key-visual.jpg"
 author: morimorig3
 ---
 
-# マイサイトの技術スタック
+# マイサイト作りました
 
 # 誰に向けてのものか
 
