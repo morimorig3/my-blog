@@ -3,7 +3,7 @@
     "__PATH_PREFIX__": true
   },
   "extends": ["react-app"],
-  "plugins": ["import", "react", "jsx-a11y"],
+  "plugins": ["import", "react", "jsx-a11y", "unused-imports"],
   "rules": {
     "import/order": [
       "error",
@@ -39,10 +39,13 @@
     "@typescript-eslint/consistent-type-imports": [
       "error",
       { "prefer": "type-imports" }
-    ]
+    ],
+    "no-unused-vars": "error",
+    "unused-imports/no-unused-imports": "error"
   },
   "env": {
     "browser": true,
     "node": true
-  }
+  },
+  "ignorePatterns": ["./src/gatsby-types.d.ts"]
 }
