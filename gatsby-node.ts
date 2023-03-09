@@ -2,6 +2,12 @@ import path from 'path';
 
 import type { GatsbyNode } from 'gatsby';
 
+export interface PostPageContext {
+  id: string;
+  next: Queries.postsQuery['allMarkdownRemark']['edges'][number]['next'];
+  previous: Queries.postsQuery['allMarkdownRemark']['edges'][number]['previous'];
+}
+
 export const createPages: GatsbyNode['createPages'] = async function ({
   actions,
   graphql,
@@ -9,13 +15,30 @@ export const createPages: GatsbyNode['createPages'] = async function ({
 }) {
   const { createPage } = actions;
   // ポストページ作成
-  const { data: postData } = await graphql<Queries.pagesQuery>(`
-    query pages {
+  const { data: postData } = await graphql<Queries.postsQuery>(`
+    query posts {
       allMarkdownRemark(sort: { frontmatter: { updatedAt: DESC } }) {
-        nodes {
-          id
-          frontmatter {
-            slug
+        edges {
+          previous {
+            id
+            frontmatter {
+              slug
+              title
+            }
+          }
+          node {
+            id
+            frontmatter {
+              slug
+              title
+            }
+          }
+          next {
+            id
+            frontmatter {
+              slug
+              title
+            }
           }
         }
       }
@@ -26,13 +49,14 @@ export const createPages: GatsbyNode['createPages'] = async function ({
     return;
   }
 
-  postData.allMarkdownRemark.nodes.forEach((node) => {
+  postData.allMarkdownRemark.edges.forEach(({ previous, node, next }) => {
     if (!node.frontmatter?.slug) throw new Error('slugが存在しません');
     const slug = node.frontmatter.slug;
     const id = node.id;
-    const context = {
+    const context: PostPageContext = {
       id,
-      slug,
+      previous,
+      next,
     };
 
     createPage({

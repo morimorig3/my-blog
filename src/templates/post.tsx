@@ -1,17 +1,19 @@
 import React from 'react';
 
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import { Layout } from '../components/Layout';
 
+import type { PostPageContext } from '../../gatsby-node';
 import type { PageProps } from 'gatsby';
 
-export type PostPage = PageProps<Queries.PostPageQuery>;
+export type PostPage = PageProps<
+  Queries.PostPageQuery,
+  Queries.PostPageQueryVariables & PostPageContext
+>;
 
-const Post = ({ data }: PostPage) => {
-  if (!data) throw new Error('データの取得に失敗しました');
-
+const Post = ({ data, pageContext }: PostPage) => {
   return (
     <Layout>
       <div>
@@ -34,6 +36,16 @@ const Post = ({ data }: PostPage) => {
             __html: data.markdownRemark?.html ?? '',
           }}
         ></article>
+      </div>
+      <div>
+        {pageContext.next?.frontmatter?.slug && (
+          <Link to={`/${pageContext.next.frontmatter?.slug}`}>前の記事</Link>
+        )}
+        {pageContext.previous?.frontmatter?.slug && (
+          <Link to={`/${pageContext.previous.frontmatter?.slug}`}>
+            次の記事
+          </Link>
+        )}
       </div>
     </Layout>
   );
