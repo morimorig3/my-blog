@@ -1290,7 +1290,6 @@ type MarkdownRemark = Node & {
   readonly children: ReadonlyArray<Node>;
   readonly excerpt: Maybe<Scalars['String']>;
   readonly excerptAst: Maybe<Scalars['JSON']>;
-  readonly fields: Maybe<MarkdownRemarkFields>;
   readonly fileAbsolutePath: Maybe<Scalars['String']>;
   readonly frontmatter: Maybe<MarkdownRemarkFrontmatter>;
   readonly headings: Maybe<ReadonlyArray<Maybe<MarkdownHeading>>>;
@@ -1380,7 +1379,6 @@ type MarkdownRemarkFieldSelector = {
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly excerpt: InputMaybe<FieldSelectorEnum>;
   readonly excerptAst: InputMaybe<FieldSelectorEnum>;
-  readonly fields: InputMaybe<MarkdownRemarkFieldsFieldSelector>;
   readonly fileAbsolutePath: InputMaybe<FieldSelectorEnum>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterFieldSelector>;
   readonly headings: InputMaybe<MarkdownHeadingFieldSelector>;
@@ -1395,27 +1393,10 @@ type MarkdownRemarkFieldSelector = {
   readonly wordCount: InputMaybe<MarkdownWordCountFieldSelector>;
 };
 
-type MarkdownRemarkFields = {
-  readonly slug: Maybe<Scalars['String']>;
-};
-
-type MarkdownRemarkFieldsFieldSelector = {
-  readonly slug: InputMaybe<FieldSelectorEnum>;
-};
-
-type MarkdownRemarkFieldsFilterInput = {
-  readonly slug: InputMaybe<StringQueryOperatorInput>;
-};
-
-type MarkdownRemarkFieldsSortInput = {
-  readonly slug: InputMaybe<SortOrderEnum>;
-};
-
 type MarkdownRemarkFilterInput = {
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly excerpt: InputMaybe<StringQueryOperatorInput>;
   readonly excerptAst: InputMaybe<JSONQueryOperatorInput>;
-  readonly fields: InputMaybe<MarkdownRemarkFieldsFilterInput>;
   readonly fileAbsolutePath: InputMaybe<StringQueryOperatorInput>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterFilterInput>;
   readonly headings: InputMaybe<MarkdownHeadingFilterListInput>;
@@ -1535,7 +1516,6 @@ type MarkdownRemarkSortInput = {
   readonly children: InputMaybe<NodeSortInput>;
   readonly excerpt: InputMaybe<SortOrderEnum>;
   readonly excerptAst: InputMaybe<SortOrderEnum>;
-  readonly fields: InputMaybe<MarkdownRemarkFieldsSortInput>;
   readonly fileAbsolutePath: InputMaybe<SortOrderEnum>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterSortInput>;
   readonly headings: InputMaybe<MarkdownHeadingSortInput>;
@@ -1838,7 +1818,6 @@ type Query_markdownRemarkArgs = {
   children: InputMaybe<NodeFilterListInput>;
   excerpt: InputMaybe<StringQueryOperatorInput>;
   excerptAst: InputMaybe<JSONQueryOperatorInput>;
-  fields: InputMaybe<MarkdownRemarkFieldsFilterInput>;
   fileAbsolutePath: InputMaybe<StringQueryOperatorInput>;
   frontmatter: InputMaybe<MarkdownRemarkFrontmatterFilterInput>;
   headings: InputMaybe<MarkdownHeadingFilterListInput>;

@@ -103,3 +103,6 @@ public
 
 # TernJS port file
 .tern-port
+
+# Sass Type
+src/**/*.module.scss.d.ts
