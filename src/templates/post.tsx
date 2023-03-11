@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { graphql, Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
 
 import { HeadFactory } from '../components/HeadFactory';
 import { Layout } from '../components/Layout';
@@ -76,7 +76,7 @@ export const postPage = graphql`
         createdAt
         keyVisual {
           childImageSharp {
-            gatsbyImageData(width: 250)
+            gatsbyImageData(width: 1280, height: 600, formats: PNG)
           }
         }
       }
@@ -87,12 +87,14 @@ export const postPage = graphql`
 export const Head = ({ data }: PostHeadProps) => {
   const { siteUrl } = data.site.siteMetadata;
   const { excerpt, frontmatter } = data.markdownRemark;
-  const { title, slug } = frontmatter;
+  const { title, slug, keyVisual } = frontmatter;
+  const imageSrc = getSrc(keyVisual) || '';
   return (
     <HeadFactory
       title={title}
       description={excerpt}
       siteUrl={`${siteUrl}/${slug}`}
+      image={imageSrc}
       type="article"
     />
   );
