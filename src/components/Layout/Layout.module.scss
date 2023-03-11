@@ -1,0 +1,9 @@
+.wrapper {
+  background-color: royalblue;
+  &--white {
+    background-color: #fff;
+  }
+  &--red {
+    background-color: #f00;
+  }
+}
