@@ -3,6 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { ArticleCard } from '../components/ArticleCard';
+import { HeadFactory } from '../components/HeadFactory';
 import { Layout } from '../components/Layout';
 import { Pagination } from '../components/Pagination';
 
@@ -21,8 +22,8 @@ const PostList = ({ data, pageContext }: PostListPage) => {
     <Layout>
       <main>
         <ul>
-          {data.allMarkdownRemark.nodes.map((node) => {
-            return <ArticleCard node={node} />;
+          {data.allMarkdownRemark.nodes.map((node, index) => {
+            return <ArticleCard key={index} node={node} />;
           })}
         </ul>
         <Pagination numPages={pageContext.numPages} />
@@ -56,3 +57,5 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = () => <HeadFactory />;

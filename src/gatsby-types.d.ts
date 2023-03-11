@@ -1290,6 +1290,7 @@ type MarkdownRemark = Node & {
   readonly children: ReadonlyArray<Node>;
   readonly excerpt: Maybe<Scalars['String']>;
   readonly excerptAst: Maybe<Scalars['JSON']>;
+  readonly fields: Maybe<MarkdownRemarkFields>;
   readonly fileAbsolutePath: Maybe<Scalars['String']>;
   readonly frontmatter: Maybe<MarkdownRemarkFrontmatter>;
   readonly headings: Maybe<ReadonlyArray<Maybe<MarkdownHeading>>>;
@@ -1379,6 +1380,7 @@ type MarkdownRemarkFieldSelector = {
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly excerpt: InputMaybe<FieldSelectorEnum>;
   readonly excerptAst: InputMaybe<FieldSelectorEnum>;
+  readonly fields: InputMaybe<MarkdownRemarkFieldsFieldSelector>;
   readonly fileAbsolutePath: InputMaybe<FieldSelectorEnum>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterFieldSelector>;
   readonly headings: InputMaybe<MarkdownHeadingFieldSelector>;
@@ -1393,10 +1395,27 @@ type MarkdownRemarkFieldSelector = {
   readonly wordCount: InputMaybe<MarkdownWordCountFieldSelector>;
 };
 
+type MarkdownRemarkFields = {
+  readonly slug: Maybe<Scalars['String']>;
+};
+
+type MarkdownRemarkFieldsFieldSelector = {
+  readonly slug: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownRemarkFieldsFilterInput = {
+  readonly slug: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownRemarkFieldsSortInput = {
+  readonly slug: InputMaybe<SortOrderEnum>;
+};
+
 type MarkdownRemarkFilterInput = {
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly excerpt: InputMaybe<StringQueryOperatorInput>;
   readonly excerptAst: InputMaybe<JSONQueryOperatorInput>;
+  readonly fields: InputMaybe<MarkdownRemarkFieldsFilterInput>;
   readonly fileAbsolutePath: InputMaybe<StringQueryOperatorInput>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterFilterInput>;
   readonly headings: InputMaybe<MarkdownHeadingFilterListInput>;
@@ -1516,6 +1535,7 @@ type MarkdownRemarkSortInput = {
   readonly children: InputMaybe<NodeSortInput>;
   readonly excerpt: InputMaybe<SortOrderEnum>;
   readonly excerptAst: InputMaybe<SortOrderEnum>;
+  readonly fields: InputMaybe<MarkdownRemarkFieldsSortInput>;
   readonly fileAbsolutePath: InputMaybe<SortOrderEnum>;
   readonly frontmatter: InputMaybe<MarkdownRemarkFrontmatterSortInput>;
   readonly headings: InputMaybe<MarkdownHeadingSortInput>;
@@ -1818,6 +1838,7 @@ type Query_markdownRemarkArgs = {
   children: InputMaybe<NodeFilterListInput>;
   excerpt: InputMaybe<StringQueryOperatorInput>;
   excerptAst: InputMaybe<JSONQueryOperatorInput>;
+  fields: InputMaybe<MarkdownRemarkFieldsFilterInput>;
   fileAbsolutePath: InputMaybe<StringQueryOperatorInput>;
   frontmatter: InputMaybe<MarkdownRemarkFrontmatterFilterInput>;
   headings: InputMaybe<MarkdownHeadingFilterListInput>;
@@ -2633,26 +2654,34 @@ type SitePluginSortInput = {
 
 type SiteSiteMetadata = {
   readonly description: Maybe<Scalars['String']>;
+  readonly image: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
+  readonly twitterUsername: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataFieldSelector = {
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly image: InputMaybe<FieldSelectorEnum>;
   readonly siteUrl: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly twitterUsername: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteSiteMetadataFilterInput = {
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly image: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly twitterUsername: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteSiteMetadataSortInput = {
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly image: InputMaybe<SortOrderEnum>;
   readonly siteUrl: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
+  readonly twitterUsername: InputMaybe<SortOrderEnum>;
 };
 
 type SiteSortInput = {
@@ -2736,7 +2765,12 @@ type PostPageQueryVariables = Exact<{
 }>;
 
 
-type PostPageQuery = { readonly markdownRemark: { readonly html: string | null, readonly frontmatter: { readonly title: string | null, readonly updatedAt: string | null, readonly slug: string | null, readonly author: string | null, readonly category: ReadonlyArray<string | null> | null, readonly createdAt: string | null, readonly keyVisual: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
+type PostPageQuery = { readonly site: { readonly siteMetadata: { readonly siteUrl: string | null } | null } | null, readonly markdownRemark: { readonly html: string | null, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly updatedAt: string | null, readonly slug: string | null, readonly author: string | null, readonly category: ReadonlyArray<string | null> | null, readonly createdAt: string | null, readonly keyVisual: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
+
+type SiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteMetaDataQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null, readonly image: string | null, readonly description: string | null, readonly siteUrl: string | null, readonly twitterUsername: string | null } | null } | null };
 
 type postsQueryVariables = Exact<{ [key: string]: never; }>;
 
