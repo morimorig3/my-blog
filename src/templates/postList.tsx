@@ -7,6 +7,8 @@ import { HeadFactory } from '../components/HeadFactory';
 import { Layout } from '../components/Layout';
 import { Pagination } from '../components/Pagination';
 
+import * as styles from './postList.module.scss';
+
 import type { PageProps } from 'gatsby';
 
 export type PostListPage = PageProps<
@@ -21,11 +23,11 @@ const PostList = ({ data, pageContext }: PostListPage) => {
   return (
     <Layout>
       <main>
-        <ul>
+        <section className={styles.postList}>
           {data.allMarkdownRemark.nodes.map((node, index) => {
             return <ArticleCard key={index} node={node} />;
           })}
-        </ul>
+        </section>
         <Pagination numPages={pageContext.numPages} />
       </main>
     </Layout>

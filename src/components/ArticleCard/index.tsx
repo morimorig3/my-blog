@@ -18,7 +18,7 @@ export const ArticleCard = ({ node }: Props) => {
     throw new Error('props value is invalid.');
   }
   return (
-    <li>
+    <article>
       <Link to={`/${node.frontmatter.slug}`} target="_blank">
         <GatsbyImage
           image={node.frontmatter.keyVisual.childImageSharp.gatsbyImageData} // TODO: アサーション
@@ -31,6 +31,6 @@ export const ArticleCard = ({ node }: Props) => {
           <p key={name}>{name}</p>
         ))}
       </Link>
-    </li>
+    </article>
   );
 };
