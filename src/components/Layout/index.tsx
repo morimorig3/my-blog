@@ -18,7 +18,10 @@ export const Layout = ({ children }: Props) => {
           <Link to="/">morimorig3.com</Link>
         </h1>
       </header>
-      <div>{children}</div>
+      {children}
+      <footer
+        className={styles.footer}
+      >{`Copyright © 2022 - ${new Date().getFullYear()} morimorig3`}</footer>
     </Fragment>
   );
 };
