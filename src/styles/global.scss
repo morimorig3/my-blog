@@ -1,11 +1,5 @@
 @use 'src/styles/variables.scss' as *;
 
-.fitScreen {
-  flex-direction: column;
-  display: flex;
-  min-height: 100vh;
-}
-
 html {
   background-color: var(--main-bg-color);
   color: var(--text-color);

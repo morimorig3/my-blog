@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
 
 import { useSiteMetadata } from '../../hooks/useSiteMetadata';
-import * as styles from '../../styles/global.scss';
+
+import * as styles from './HeadFactory.module.scss';
 
 interface Props {
   title?: string;
@@ -46,7 +47,7 @@ export const HeadFactory = ({
   return (
     <Fragment>
       <html lang="ja" />
-      <body className={styles.fitScreen} />
+      <body className={styles.body} />
       <meta name="format-detection" content="address=no, email=no" />
       <title>{head.title}</title>
       <meta name="description" content={head.description} />
