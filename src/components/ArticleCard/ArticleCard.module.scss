@@ -1,0 +1,13 @@
+.article {
+  padding-left: 24px;
+  padding-right: 24px;
+  &__imageWrapper {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+}
