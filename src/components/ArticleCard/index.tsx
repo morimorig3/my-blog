@@ -3,33 +3,23 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-interface Props {
-  node: Queries.PostListQuery['allMarkdownRemark']['nodes'][number];
-}
+import type { DeepNonNullable } from '../../types/utils';
 
-export const ArticleCard = ({ node }: Props) => {
-  if (
-    !node.frontmatter?.slug ||
-    !node.frontmatter?.title ||
-    !node.frontmatter?.keyVisual?.childImageSharp ||
-    !node.frontmatter?.createdAt ||
-    !node.frontmatter?.category
-  ) {
-    throw new Error('props value is invalid.');
-  }
+type Props = DeepNonNullable<
+  Queries.PostListQuery['allMarkdownRemark']['nodes'][number]['frontmatter']
+>;
+
+export const ArticleCard = ({ title, slug, keyVisual, createdAt }: Props) => {
   return (
     <article>
-      <Link to={`/${node.frontmatter.slug}`} target="_blank">
+      <Link to={`/${slug}`} target="_blank">
         <GatsbyImage
-          image={node.frontmatter.keyVisual.childImageSharp.gatsbyImageData} // TODO: アサーション
+          image={keyVisual.childImageSharp.gatsbyImageData} // TODO: アサーション
           alt="keyVisual"
           as="figure"
         />
-        <p>{node.frontmatter.title}</p>
-        <p>{`createdAt: ${node.frontmatter.createdAt}`}</p>
-        {node.frontmatter.category.map((name) => (
-          <p key={name}>{name}</p>
-        ))}
+        <p>{title}</p>
+        <p>{`createdAt: ${createdAt}`}</p>
       </Link>
     </article>
   );

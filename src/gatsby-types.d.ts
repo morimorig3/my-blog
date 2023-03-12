@@ -2737,7 +2737,7 @@ type PostListQueryVariables = Exact<{
 }>;
 
 
-type PostListQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly frontmatter: { readonly title: string | null, readonly category: ReadonlyArray<string | null> | null, readonly createdAt: string | null, readonly slug: string | null, readonly keyVisual: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> } };
+type PostListQuery = { readonly allMarkdownRemark: { readonly nodes: ReadonlyArray<{ readonly frontmatter: { readonly title: string | null, readonly createdAt: string | null, readonly slug: string | null, readonly keyVisual: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null }> } };
 
 type PostPageQueryVariables = Exact<{
   id: Scalars['String'];

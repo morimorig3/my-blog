@@ -9,10 +9,11 @@ import { Pagination } from '../components/Pagination';
 
 import * as styles from './postList.module.scss';
 
+import type { DeepNonNullable } from '../types/utils';
 import type { PageProps } from 'gatsby';
 
 export type PostListPage = PageProps<
-  Queries.PostListQuery,
+  DeepNonNullable<Queries.PostListQuery>,
   Queries.PostListQueryVariables & {
     numPages: number;
     currentPage: number;
@@ -24,9 +25,19 @@ const PostList = ({ data, pageContext }: PostListPage) => {
     <Layout>
       <main>
         <section className={styles.postList}>
-          {data.allMarkdownRemark.nodes.map((node, index) => {
-            return <ArticleCard key={index} node={node} />;
-          })}
+          {data.allMarkdownRemark.nodes.map(
+            ({ frontmatter: { title, slug, createdAt, keyVisual } }) => {
+              return (
+                <ArticleCard
+                  key={title}
+                  title={title}
+                  slug={slug}
+                  createdAt={createdAt}
+                  keyVisual={keyVisual}
+                />
+              );
+            }
+          )}
         </section>
         <Pagination numPages={pageContext.numPages} />
       </main>
@@ -46,7 +57,6 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
-          category
           createdAt(formatString: "YYYY年MM月DD日")
           slug
           keyVisual {
