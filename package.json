@@ -10,17 +10,18 @@
   "scripts": {
     "develop": "run-p develop:*",
     "develop:gatsby": "gatsby develop",
-    "develop:typegen": "typed-scss-modules src --watch  --implementation sass",
+    "develop:typegen": "typed-scss-modules src --watch",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "tsc": "tsc --noEmit",
     "lint": "run-s lint:*",
+    "typegen": "typed-scss-modules src",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:spell": "cspell -c .cspell.json 'src/**/*.{js,jsx,ts,tsx}'",
-    "check-all": "run-s tsc lint",
+    "check-all": "run-s typegen tsc lint",
     "pre-commit": "check-all"
   },
   "dependencies": {
