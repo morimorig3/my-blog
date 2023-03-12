@@ -61,7 +61,7 @@ export const query = graphql`
           slug
           keyVisual {
             childImageSharp {
-              gatsbyImageData(width: 250)
+              gatsbyImageData(width: 550)
             }
           }
         }

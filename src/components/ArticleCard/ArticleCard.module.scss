@@ -2,8 +2,15 @@
   padding-left: 24px;
   padding-right: 24px;
   &__imageWrapper {
+    display: grid;
+    place-items: center;
     margin-left: -24px;
     margin-right: -24px;
+    height: 56.25vw;
+    overflow: hidden;
+  }
+  &__image {
+    height: 100%;
   }
   &__body {
     display: flex;
