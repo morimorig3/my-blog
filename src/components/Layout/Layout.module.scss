@@ -1,9 +1,14 @@
-.wrapper {
-  background-color: royalblue;
-  &--white {
-    background-color: #fff;
-  }
-  &--red {
-    background-color: #f00;
+.header {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: var(--primary-color);
+  padding-left: 24px;
+  padding-right: 24px;
+  &--title {
+    font-size: var(--text-md);
+    a {
+      color: var(--color-white);
+    }
   }
 }

@@ -44,6 +44,8 @@ export const HeadFactory = ({
 
   return (
     <Fragment>
+      <html lang="ja" />
+      <body className={`fit-screen`} />
       <meta name="format-detection" content="address=no, email=no" />
       <title>{head.title}</title>
       <meta name="description" content={head.description} />
