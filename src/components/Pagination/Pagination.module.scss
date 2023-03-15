@@ -1,0 +1,16 @@
+.pagination {
+  &__list {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+  }
+  &__item {
+    font-size: var(--text-md);
+    padding-left: var(--space-1);
+    padding-right: var(--space-1);
+    &__bold {
+      font-weight: bold;
+    }
+  }
+}

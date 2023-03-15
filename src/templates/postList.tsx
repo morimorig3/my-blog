@@ -39,7 +39,10 @@ const PostList = ({ data, pageContext }: PostListPage) => {
             }
           )}
         </section>
-        <Pagination numPages={pageContext.numPages} />
+        <Pagination
+          numPages={pageContext.numPages}
+          currentPage={pageContext.currentPage}
+        />
       </main>
     </Layout>
   );
