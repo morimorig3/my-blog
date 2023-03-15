@@ -57,7 +57,7 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
-          createdAt(formatString: "YYYY年MM月DD日")
+          createdAt(formatString: "YYYY-MM-DD")
           slug
           keyVisual {
             childImageSharp {

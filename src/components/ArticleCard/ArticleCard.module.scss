@@ -1,6 +1,9 @@
 .article {
-  padding-left: 24px;
-  padding-right: 24px;
+  display: block;
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+  padding-bottom: var(--space-3);
+  font-family: var(--font-familiy-zen-kaku-gothic-new);
   &__imageWrapper {
     display: grid;
     place-items: center;
@@ -15,6 +18,14 @@
   &__body {
     display: flex;
     flex-direction: column;
-    row-gap: 8px;
+    padding-top: var(--space-1);
+    row-gap: var(--space-1);
+  }
+  &__time {
+    line-height: 1;
+    font-size: var(--text-sm);
+  }
+  &__title {
+    font-size: var(--text-xl);
   }
 }
