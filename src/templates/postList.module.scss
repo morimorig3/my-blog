@@ -1,5 +1,8 @@
 .postList {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   row-gap: 56px;
+  @container (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
 }

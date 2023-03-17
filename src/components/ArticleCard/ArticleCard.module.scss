@@ -11,14 +11,21 @@
     margin-right: -24px;
     height: 56.25vw;
     overflow: hidden;
+    @container (min-width: 768px) {
+      height: 26vw;
+    }
+    @container (min-width: 1024px) {
+      height: 266px;
+    }
   }
   &__image {
+    width: 100%;
     height: 100%;
   }
   &__body {
     display: flex;
     flex-direction: column;
-    padding-top: var(--space-1);
+    padding-top: var(--space-2);
     row-gap: var(--space-1);
   }
   &__time {

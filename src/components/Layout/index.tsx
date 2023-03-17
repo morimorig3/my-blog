@@ -18,7 +18,7 @@ export const Layout = ({ children }: Props) => {
           <Link to="/">morimorig3.com</Link>
         </h1>
       </header>
-      {children}
+      <div className={styles.container}>{children}</div>
       <footer
         className={styles.footer}
       >{`Copyright © 2022 - ${new Date().getFullYear()} morimorig3`}</footer>
