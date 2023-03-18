@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "run-p develop:*",
+    "dev": "run-p develop:*",
     "develop:gatsby": "gatsby develop",
     "develop:typegen": "typed-scss-modules src --watch",
     "start": "gatsby develop",
@@ -32,9 +32,11 @@
     "gatsby-plugin-sass": "^6.7.0",
     "gatsby-plugin-sharp": "^5.7.0",
     "gatsby-remark-images": "^7.7.0",
+    "gatsby-remark-prismjs": "^7.7.0",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-remark": "^6.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
