@@ -84,7 +84,7 @@ export const createPages: GatsbyNode['createPages'] = async function ({
     return;
   }
   const posts = paginationData.allMarkdownRemark.nodes;
-  const postsPerPage = 3;
+  const postsPerPage = 4;
   const numPages = Math.ceil(posts.length / postsPerPage);
   Array.from({ length: numPages }).forEach((_, index) => {
     createPage({

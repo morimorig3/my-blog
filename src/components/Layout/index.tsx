@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import { Fragment } from 'react';
 import React from 'react';
 
 import { Link } from 'gatsby';
@@ -12,7 +11,7 @@ interface Props {
 
 export const Layout = ({ children }: Props) => {
   return (
-    <Fragment>
+    <div className={styles.wrapper}>
       <header className={styles.header}>
         <h1 className={styles.header__title}>
           <Link to="/">morimorig3.com</Link>
@@ -22,6 +21,6 @@ export const Layout = ({ children }: Props) => {
       <footer
         className={styles.footer}
       >{`Copyright © 2022 - ${new Date().getFullYear()} morimorig3`}</footer>
-    </Fragment>
+    </div>
   );
 };

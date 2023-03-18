@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 
 import { useSiteMetadata } from '../../hooks/useSiteMetadata';
 
-import * as styles from './HeadFactory.module.scss';
-
 interface Props {
   title?: string;
   description?: string;
@@ -47,7 +45,7 @@ export const HeadFactory = ({
   return (
     <Fragment>
       <html lang="ja" />
-      <body className={styles.body} />
+      <body />
       <meta name="format-detection" content="address=no, email=no" />
       <title>{head.title}</title>
       <meta name="description" content={head.description} />

@@ -9,6 +9,9 @@
     font-size: var(--text-md);
     padding-left: var(--space-1);
     padding-right: var(--space-1);
+    &:hover {
+      font-weight: bold;
+    }
     &__bold {
       font-weight: bold;
     }

@@ -23,7 +23,7 @@ export type PostListPage = PageProps<
 const PostList = ({ data, pageContext }: PostListPage) => {
   return (
     <Layout>
-      <main>
+      <main className={styles.wrapper}>
         <section className={styles.postList}>
           {data.allMarkdownRemark.nodes.map(
             ({ frontmatter: { title, slug, createdAt, keyVisual } }) => {
