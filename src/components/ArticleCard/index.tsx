@@ -3,8 +3,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import { parseToBreakHTML } from '../../functions/parseToBreakHTML';
-
 import * as styles from './ArticleCard.module.scss';
 
 import type { DeepNonNullable } from '../../types/utils';
@@ -33,7 +31,8 @@ export const ArticleCard = ({ title, slug, keyVisual, createdAt }: Props) => {
           <h2
             className={styles.article__title}
             dangerouslySetInnerHTML={{
-              __html: parseToBreakHTML(title),
+              // FIXME: parser.translateHTMLString(title)WebComponentを使用する
+              __html: `<budoux-ja>${title}</budoux-ja>`,
             }}
           ></h2>
         </div>

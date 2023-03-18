@@ -68,6 +68,7 @@ export const HeadFactory = ({
         href="/apple-touch-icon.png"
         sizes="180x180"
       />
+      <script src="https://unpkg.com/budoux/bundle/budoux-ja.min.js"></script>
     </Fragment>
   );
 };
