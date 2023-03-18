@@ -3,6 +3,8 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 
+import { Footer } from '../Footer';
+
 import * as styles from './Layout.module.scss';
 
 interface Props {
@@ -18,9 +20,7 @@ export const Layout = ({ children }: Props) => {
         </h1>
       </header>
       <div className={styles.container}>{children}</div>
-      <footer
-        className={styles.footer}
-      >{`Copyright © 2022 - ${new Date().getFullYear()} morimorig3`}</footer>
+      <Footer />
     </div>
   );
 };
