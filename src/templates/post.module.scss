@@ -3,9 +3,19 @@
   flex-direction: column;
   row-gap: var(--space-3);
   padding: var(--space-3);
+  @container (min-width: 768px) {
+    max-width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+    row-gap: var(--space-3);
+    padding: var(--space-6);
+  }
   &__header {
     display: grid;
     row-gap: var(--space-1);
+    @container (min-width: 768px) {
+      row-gap: var(--space-2);
+    }
   }
   &__time {
     line-height: 1;
@@ -17,17 +27,16 @@
   &__keyVisual {
     display: grid;
     place-items: center;
-    margin-left: -24px;
-    margin-right: -24px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     height: 56.25vw;
     overflow: hidden;
     @container (min-width: 768px) {
-      height: 26vw;
+      height: 45.572vw;
     }
     @container (min-width: 1024px) {
-      height: 266px;
-      margin-left: 0;
-      margin-right: 0;
+      height: 450px;
     }
   }
   &__image {
