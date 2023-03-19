@@ -54,6 +54,7 @@ const Post = ({ data, pageContext }: PostPageProps) => {
           )}
         </figure>
         <div
+          className="markdown-body"
           dangerouslySetInnerHTML={{
             __html: data.markdownRemark?.html ?? '',
           }}
