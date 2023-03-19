@@ -2744,7 +2744,7 @@ type PostPageQueryVariables = Exact<{
 }>;
 
 
-type PostPageQuery = { readonly site: { readonly siteMetadata: { readonly siteUrl: string | null } | null } | null, readonly markdownRemark: { readonly html: string | null, readonly excerpt: string | null, readonly frontmatter: { readonly title: string | null, readonly updatedAt: string | null, readonly slug: string | null, readonly author: string | null, readonly category: ReadonlyArray<string | null> | null, readonly createdAt: string | null, readonly keyVisual: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
+type PostPageQuery = { readonly site: { readonly siteMetadata: { readonly siteUrl: string | null } | null } | null, readonly markdownRemark: { readonly html: string | null, readonly excerpt: string | null, readonly frontmatter: { readonly createdAt: string | null, readonly title: string | null, readonly slug: string | null, readonly keyVisual: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null } | null } | null };
 
 type SiteMetaDataQueryVariables = Exact<{ [key: string]: never; }>;
 

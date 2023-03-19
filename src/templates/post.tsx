@@ -1,56 +1,82 @@
 import React from 'react';
 
 import { graphql, Link } from 'gatsby';
-import { GatsbyImage, getSrc } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
 
+import { DefaultKeyVisual } from '../components/DefaultKeyVisual';
 import { HeadFactory } from '../components/HeadFactory';
 import { Layout } from '../components/Layout';
+
+import * as styles from './post.module.scss';
 
 import type { PostPageContext } from '../../gatsby-node';
 import type { DeepNonNullable } from '../types/utils';
 import type { PageProps, HeadProps } from 'gatsby';
 
 export type PostPageProps = PageProps<
-  Queries.PostPageQuery,
-  Queries.PostPageQueryVariables & PostPageContext
+  DeepNonNullable<Queries.PostPageQuery>,
+  DeepNonNullable<Queries.PostPageQueryVariables & PostPageContext>
 >;
 
 export type PostHeadProps = HeadProps<DeepNonNullable<Queries.PostPageQuery>>;
 
 const Post = ({ data, pageContext }: PostPageProps) => {
+  const { title, keyVisual, createdAt } = data.markdownRemark.frontmatter;
+  const dateTime = createdAt.replace(/-/gi, ' ');
+  const image = getImage(keyVisual);
+  const { next, previous } = pageContext;
+  const hasNext = !!next;
+  const hasPrevious = !!previous;
   return (
     <Layout>
-      <div>
-        <h1>{data.markdownRemark?.frontmatter?.title}</h1>
-        <GatsbyImage
-          image={
-            data.markdownRemark!.frontmatter!.keyVisual!.childImageSharp!
-              .gatsbyImageData
-          } // TODO: アサーション
-          alt="keyVisual"
-          as="figure"
-        />
-        <div>
-          <p>{data.markdownRemark?.frontmatter?.author}</p>
-          <p>{data.markdownRemark?.frontmatter?.createdAt}</p>
-          <p>{data.markdownRemark?.frontmatter?.updatedAt}</p>
-        </div>
-        <article
+      <article className={styles.post}>
+        <header className={styles.post__header}>
+          <time className={styles.post__time} dateTime={dateTime}>
+            {dateTime}
+          </time>
+          <h1
+            className={styles.post__title}
+            dangerouslySetInnerHTML={{
+              // FIXME: parser.translateHTMLString(title)WebComponentを使用する
+              __html: `<budoux-ja>${title}</budoux-ja>`,
+            }}
+          />
+        </header>
+        <figure className={styles.post__keyVisual}>
+          {image ? (
+            <GatsbyImage
+              className={styles.post__image}
+              image={image}
+              alt="keyVisual"
+            />
+          ) : (
+            <DefaultKeyVisual className={styles.post__image} />
+          )}
+        </figure>
+        <div
           dangerouslySetInnerHTML={{
             __html: data.markdownRemark?.html ?? '',
           }}
-        ></article>
-      </div>
-      <div>
-        {pageContext.next?.frontmatter?.slug && (
-          <Link to={`/${pageContext.next.frontmatter?.slug}`}>前の記事</Link>
-        )}
-        {pageContext.previous?.frontmatter?.slug && (
-          <Link to={`/${pageContext.previous.frontmatter?.slug}`}>
-            次の記事
-          </Link>
-        )}
-      </div>
+        />
+        <footer className={styles.post__footer}>
+          {hasPrevious && (
+            <div className={styles.post__previous}>
+              <p>PREV</p>
+              <Link to={`/${previous.frontmatter.slug}`}>
+                {previous.frontmatter.title}
+              </Link>
+            </div>
+          )}
+          {hasNext && (
+            <div className={styles.post__previous}>
+              <p>NEXT</p>
+              <Link to={`/${next.frontmatter.slug}`}>
+                {next.frontmatter.title}
+              </Link>
+            </div>
+          )}
+        </footer>
+      </article>
     </Layout>
   );
 };
@@ -68,12 +94,9 @@ export const postPage = graphql`
       html
       excerpt(truncate: true, pruneLength: 120, format: PLAIN)
       frontmatter {
+        createdAt(formatString: "YYYY-MM-DD")
         title
-        updatedAt
         slug
-        author
-        category
-        createdAt
         keyVisual {
           childImageSharp {
             gatsbyImageData(width: 1280, height: 600, formats: PNG)

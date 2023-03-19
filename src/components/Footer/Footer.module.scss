@@ -18,7 +18,10 @@
   }
   &__others {
     grid-area: others;
-    font-weight: bold;
+    font-weight: 900;
+    a {
+      text-decoration: none;
+    }
   }
   &__sns {
     grid-area: sns;

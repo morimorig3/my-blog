@@ -4,7 +4,8 @@
   padding-right: var(--space-3);
   padding-bottom: var(--space-3);
   font-family: var(--font-familiy-zen-kaku-gothic-new);
-  &__imageWrapper {
+  text-decoration: none;
+  &__keyVisual {
     display: grid;
     place-items: center;
     margin-left: -24px;

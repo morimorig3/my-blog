@@ -16,7 +16,7 @@ export const ArticleCard = ({ title, slug, keyVisual, createdAt }: Props) => {
   return (
     <article>
       <Link className={styles.article} to={`/${slug}`} target="_blank">
-        <div className={styles.article__imageWrapper}>
+        <div className={styles.article__keyVisual}>
           <GatsbyImage
             className={styles.article__image}
             image={keyVisual.childImageSharp.gatsbyImageData} // TODO: アサーション
