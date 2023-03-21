@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { createElement, Fragment } from 'react';
 
 import { graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
+import rehypeParse from 'rehype-parse';
+import rehypeReact from 'rehype-react';
+import { unified } from 'unified';
 
 import { DefaultKeyVisual } from '../components/DefaultKeyVisual';
 import { HeadFactory } from '../components/HeadFactory';
 import { Layout } from '../components/Layout';
+import { Notice } from '../components/Notice';
 
 import * as styles from './post.module.scss';
 
@@ -20,13 +24,25 @@ export type PostPageProps = PageProps<
 
 export type PostHeadProps = HeadProps<DeepNonNullable<Queries.PostPageQuery>>;
 
-const Post = ({ data, pageContext }: PostPageProps) => {
+const Post = ({ data, pageContext: { next, previous } }: PostPageProps) => {
   const { title, keyVisual, createdAt } = data.markdownRemark.frontmatter;
   const dateTime = createdAt.replace(/-/gi, ' ');
   const image = getImage(keyVisual);
-  const { next, previous } = pageContext;
   const hasNext = !!next;
   const hasPrevious = !!previous;
+
+  const html = unified()
+    .use(rehypeParse, { fragment: true })
+    .use(rehypeReact, {
+      createElement,
+      Fragment,
+      components: {
+        notice: Notice,
+      } as any,
+    })
+    .freeze()
+    .processSync(data.markdownRemark.html).result;
+
   return (
     <Layout>
       <article className={styles.post}>
@@ -53,12 +69,7 @@ const Post = ({ data, pageContext }: PostPageProps) => {
             <DefaultKeyVisual className={styles.post__image} />
           )}
         </figure>
-        <div
-          className="markdown-body"
-          dangerouslySetInnerHTML={{
-            __html: data.markdownRemark?.html ?? '',
-          }}
-        />
+        <div className="markdown-body">{html}</div>
         <footer className={styles.post__footer}>
           {hasPrevious && (
             <div className={styles.post__previous}>
