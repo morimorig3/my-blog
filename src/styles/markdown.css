@@ -1,4 +1,4 @@
-.markdown-body > div > * {
+.markdown-body > * {
   margin-top: var(--space-3);
   margin-bottom: var(--space-3);
 }

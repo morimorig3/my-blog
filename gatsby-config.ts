@@ -19,7 +19,10 @@ const config: GatsbyConfig = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-component`,
+          {
+            resolve: `gatsby-remark-component`,
+            options: { components: ['alert'] },
+          },
           `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-prismjs`,
