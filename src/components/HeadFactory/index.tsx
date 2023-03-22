@@ -46,7 +46,10 @@ export const HeadFactory = ({
     <Fragment>
       <html lang="ja" />
       <body />
-      <meta name="format-detection" content="address=no, email=no" />
+      <meta
+        name="format-detection"
+        content="telephone=no, address=no, email=no"
+      />
       <title>{head.title}</title>
       <meta name="description" content={head.description} />
       <meta property="og:title" content={head.title} />
