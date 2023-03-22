@@ -6,6 +6,7 @@ import rehypeParse from 'rehype-parse';
 import rehypeReact from 'rehype-react';
 import { unified } from 'unified';
 
+import { Table } from '../Table';
 import { DefaultKeyVisual } from '../components/DefaultKeyVisual';
 import { HeadFactory } from '../components/HeadFactory';
 import { Layout } from '../components/Layout';
@@ -38,6 +39,7 @@ const Post = ({ data, pageContext: { next, previous } }: PostPageProps) => {
       Fragment,
       components: {
         notice: Notice,
+        table: Table,
       } as any,
     })
     .freeze()

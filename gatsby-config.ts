@@ -19,7 +19,10 @@ const config: GatsbyConfig = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-component-parent2div`,
+          {
+            resolve: `gatsby-remark-component-parent2div`,
+            options: { components: ['notice'] },
+          },
           `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-prismjs`,
