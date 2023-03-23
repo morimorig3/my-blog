@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--border-color);
+  background-color: var(--secondary-bg-color);
   &__container {
     container-type: inline-size;
     max-width: 1024px;
@@ -33,7 +33,7 @@
     text-align: center;
     font-size: var(--text-xs);
     color: var(--color-white);
-    background-color: var(--text-color);
+    background-color: var(--primary-text-color);
     padding-top: var(--space-1);
     padding-bottom: var(--space-1);
   }

@@ -1,8 +1,8 @@
 @use 'src/styles/variables.scss' as *;
 
 html {
-  background-color: var(--main-bg-color);
-  color: var(--text-color);
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
   font-size: var(--text-md);
   min-height: 100vh;
   width: 100%;
@@ -15,5 +15,10 @@ html {
 }
 
 a {
-  color: var(--text-color);
+  color: var(--primary-text-color);
+  text-decoration: none;
+  transition: opacity 0.25s;
+  &:hover {
+    opacity: 0.5;
+  }
 }

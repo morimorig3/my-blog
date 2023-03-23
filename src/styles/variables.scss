@@ -1,8 +1,18 @@
 :root {
-  --text-color: #1e293b;
-  --border-color: #f1f5f9;
-  --main-bg-color: #f8fafc;
-  --action-bg-color: #f9f7f7;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --primary-text-color: var(--gray-900);
+  --link-text-color: #2563eb;
+  --primary-bg-color: var(--gray-50);
+  --secondary-bg-color: var(--gray-100);
   --primary-color: rgba(30, 64, 175, 1);
   --text-xl: 20px;
   --text-lg: 18px;
@@ -25,9 +35,9 @@
 }
 
 .darkMode {
-  --text-color: #e9e9e9;
-  --border-color: #434343;
-  --main-bg-color: #434343;
+  --primary-text-color: #e9e9e9;
+  --gray-100: #434343;
+  --primary-bg-color: #434343;
   --action-bg-color: #363636;
   --primary-color: rgba(30, 64, 175, 0.5);
 }
