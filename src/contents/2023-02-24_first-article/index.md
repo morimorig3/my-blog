@@ -84,6 +84,9 @@ author: morimorig3
 
 インライン`code`スタイル
 
+## リンクカード
+
+[$card](https://www.morimorig3.com)
 
 <notice type='alert'>アラート本文</notice>
 

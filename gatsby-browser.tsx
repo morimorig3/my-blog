@@ -2,6 +2,7 @@ import './src/styles/reset.css';
 import './src/styles/global.scss';
 import './src/styles/prism.css';
 import './src/styles/markdown.scss';
+import './src/styles/link-card.scss';
 import '@fontsource/zen-kaku-gothic-new/300.css';
 import '@fontsource/zen-kaku-gothic-new/400.css';
 import '@fontsource/zen-kaku-gothic-new/500.css';
