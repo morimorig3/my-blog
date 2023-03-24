@@ -28,7 +28,7 @@ author: morimorig3
 
 マイバイブルの[SOFT SKILLS ソフトウェア開発者の人生マニュアル](https://amzn.to/3sDiyLw)に毎週ブログポストを投下せよ！との指示があったので実践しています。
 
-https://amzn.to/3sDiyLw
+[$card](https://amzn.to/3sDiyLw)
 
 ## 製作物の積み上げ
 

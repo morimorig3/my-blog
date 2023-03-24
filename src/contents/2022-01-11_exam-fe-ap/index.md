@@ -60,7 +60,7 @@ author: morimorig3
 
 私はApple製品を使っているのでFocus To-Doというアプリを使用しています。
 
-https://apps.apple.com/jp/app/focus-to-do-%E3%83%9D%E3%83%A2%E3%83%89%E3%83%BC%E3%83%AD%E6%8A%80%E8%A1%93-%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86/id966057213
+[$card](https://apps.apple.com/jp/app/focus-to-do-%E3%83%9D%E3%83%A2%E3%83%89%E3%83%BC%E3%83%AD%E6%8A%80%E8%A1%93-%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86/id966057213)
 
 それぞれの試験に消費したポモドーロは以下の通りです。
 
@@ -84,7 +84,7 @@ https://apps.apple.com/jp/app/focus-to-do-%E3%83%9D%E3%83%A2%E3%83%89%E3%83%BC%E
 
 通しで2周する。解説がイラスト付きでとてもわかりやすいです。分厚いですが、イラスト分もあるので意外とスラスラと読めます。
 
-https://amzn.to/33lUEcA
+[$card](https://amzn.to/33lUEcA)
 
 ### 過去問道場（7日間）
 
@@ -93,7 +93,7 @@ https://amzn.to/33lUEcA
 
 通勤時間が長い人は、電車でスマホから。長風呂をするかたはお風呂でスマホから。隙間時間は過去問道場で鍛えてください。
 
-https://www.fe-siken.com/fekakomon.php
+[$card](https://www.fe-siken.com/fekakomon.php)
 
 ## 午後試験
 
@@ -108,19 +108,19 @@ https://www.fe-siken.com/fekakomon.php
 少し古くなっているので、立ち読みしてみてわかりにくそうだったら他のテキストを選んだ方がいいかもしれません。
 試験の出題傾向や科目選択の方法が第1章に書かれているので、そこだけでも立ち読みで読んで欲しいです。
 
-https://amzn.to/3JYwhTq
+[$card](https://amzn.to/3JYwhTq)
 
 ### アルゴリズム（7日間）
 
 難しいので7日以上みっちりやってほしいです。実務経験がある方なら、時間をかければ回答できます。過去問を解くことで回答スピードを上げることができるので、是非実践してください。
 
-https://amzn.to/3f5TiFF
+[$card](https://amzn.to/3f5TiFF)
 
 ### プログラミングで選択した科目のテキスト
 
 私はPythonを選択しました。Pythonの実務経験はなかったですが、アルゴリズムと同じで時間をかければ回答できます。
 
-https://amzn.to/3HKq77k
+[$card](https://amzn.to/3HKq77k)
 
 ## 残りの時間は過去問道場
 
@@ -139,7 +139,7 @@ https://amzn.to/3HKq77k
 をやりこむ。三段になるくらいまでやり込めば安心して大丈夫です。
 基本情報で経験済みだと思うので、大丈夫だと思ったら午後試験の勉強に移行してください。
 
-https://www.ap-siken.com/apkakomon.php
+[$card](https://www.ap-siken.com/apkakomon.php)
 
 ## 午後試験
 
@@ -151,7 +151,7 @@ https://www.ap-siken.com/apkakomon.php
 全分野一問くらいやってみてください。そうすると、得意な問題と苦手な問題がわかるはずです。
 得意分野を時間の許すかぎり周回してください。
 
-https://amzn.to/3GbZvvC
+[$card](https://amzn.to/3GbZvvC)
 
 ### 過去問道場午後試験
 

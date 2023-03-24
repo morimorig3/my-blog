@@ -40,9 +40,9 @@ Next.jsは公式ドキュメントが有志によって日本語されていた�
 
 >ユーザーにとってはより速く、開発者にとってはより開発しやすく。ウェブの新時代はまだ始まったばかりです。
 
-https://nextjs.org/
+[$card](https://nextjs.org/)
 
-https://www.gatsbyjs.com/
+[$card](https://www.gatsbyjs.com/)
 
 # スタイル
 
@@ -52,16 +52,16 @@ tailwindCSSが圧倒的に描きやすいと思っているが、市場のコー
 
 tailwindもコードの見通しがすぐに悪くなるから決して最強というわけじゃないんだけど・・・CSSって難しいですね。
 
-https://tailwindcss.com/
+[$card](https://tailwindcss.com/)
 
 # ヘッドレスCMS
 
 コンテンツの管理を任せるCMSですが、こちらも情報の多さを重視しました。最近よく聞くmicroCMSや一度お世話になったこともあるcontentfulで迷いました。
 日本製のmicroCMSは公式ドキュメントが読みやすく使い勝手もいいだろうと思いましたが、Qiitaの検索でcontentfulの方が2倍以上の記事数があるcontentfulを採用しました。
 
-https://www.contentful.com/
+[$card](https://www.contentful.com/)
 
-https://document.microcms.io/
+[$card](https://document.microcms.io/)
 
 # ホスティングサービス
 
@@ -75,13 +75,13 @@ pushがトリガーになって、サーバー側のNode.jsでbuildコマンド�
 
 デザインについては、本業でもなく深く勉強をしたこともないので、プロフェッショナル達の作品を参考にさせていただきました。
 
-https://nextjs.org/
+[$card](https://nextjs.org/)
 
-https://ja.reactjs.org/
+[$card](https://ja.reactjs.org/)
 
-https://engineering.mercari.com/
+[$card](https://engineering.mercari.com/)
 
-https://zenn.dev/
+[$card](https://zenn.dev/)
 
 ---
 ひとまずやりたいことはできたかなというところでございます。

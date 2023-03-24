@@ -17,7 +17,7 @@ author: morimorig3
 文章の目的は、「あなたの考え方を読者に伝えること」です。そして、そのために「読者のことを考える」ことが大切です。
 これから記述するさまざまなポイントは、「読者のことを考える」という原則を具体化したものです。
 
-https://amzn.to/3Hg1K1p
+[$card](https://amzn.to/3Hg1K1p)
 
 ### 漢字とかな
 
@@ -147,7 +147,7 @@ VS Codeの拡張でテキスト校正ツールがあります。VS Codeで文章
 
 ![テキスト校正ツール](./image_01.png)
 
-https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading
+[$card](https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading)
 
 ## 参考
 

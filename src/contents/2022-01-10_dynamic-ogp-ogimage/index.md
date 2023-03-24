@@ -14,15 +14,15 @@ OGPを動的に生成する方法は[imgix](https://blog.microcms.io/imgix-ogp/)
 
 この記事では主に、日本語化とBudouXの導入について解説します。og-imageの導入解説記事は先人が素晴らしいものを残してくれています。
 
-https://qiita.com/p1ass/items/b8d5c1f3f4a5fd984d2c
+[$card](https://qiita.com/p1ass/items/b8d5c1f3f4a5fd984d2c)
 
-https://scrapbox.io/mkizka/vercel%2Fog-image%E3%82%92%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AF%E3%81%97%E3%81%A6%E8%87%AA%E5%88%86%E3%81%A0%E3%81%91%E3%81%AEOGP%E7%94%BB%E5%83%8F%E7%94%9F%E6%88%90%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%92%E4%BD%9C%E3%82%8D%E3%81%86
+[$card](https://scrapbox.io/mkizka/vercel%2Fog-image%E3%82%92%E3%83%95%E3%82%A9%E3%83%BC%E3%82%AF%E3%81%97%E3%81%A6%E8%87%AA%E5%88%86%E3%81%A0%E3%81%91%E3%81%AEOGP%E7%94%BB%E5%83%8F%E7%94%9F%E6%88%90%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%92%E4%BD%9C%E3%82%8D%E3%81%86)
 
 # og-imageとは
 
 Next.jsを開発しているVercel社が提供する、動的にOpen Graph画像を生成するサービスです。
 
-https://github.com/vercel/og-image
+[$card](https://github.com/vercel/og-image)
 
 # 手順
 
@@ -32,7 +32,7 @@ https://github.com/vercel/og-image
 
 ## ホスティングまで
 
-https://github.com/vercel/og-image
+[$card](https://github.com/vercel/og-image)
 
 デプロイの手順通り進めれば、Vercelでホスティングまでしてくれます。
 
@@ -42,7 +42,7 @@ og-imageで日本語を表示に対応するためには、日本語フォント
 
 フォントのデータが必要なので用意します。私は、サブセット化されているものを使用しました。
 
-https://github.com/ixkaito/NotoSansJP-subset
+[$card](https://github.com/ixkaito/NotoSansJP-subset)
 
 ダウンロードしてきた、フォントファイルを`_fonts`フォルダーに格納して`template.ts`で読み込ませます。
 
@@ -93,7 +93,7 @@ Webで問題になりがちな日本語の改行位置を調整します。Budou
 
 インストール・使い方
 
-https://www.npmjs.com/package/budoux
+[$card](https://www.npmjs.com/package/budoux)
 
 getHtmlの中でHTMLを出力して返り値に渡してあげると完了です。
 

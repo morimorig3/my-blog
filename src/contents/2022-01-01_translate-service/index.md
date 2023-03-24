@@ -20,7 +20,7 @@ author: morimorig3
 
 >DeepLは、人工知能を活用し、世界に存在する言語の壁を取り払うことを目指すドイツ企業です。
 
-https://www.deepl.com/press.html
+[$card](https://www.deepl.com/press.html)
 
 近い将来に言葉の壁がないコミュニケーションを取れる未来が見えてきましたね。
 
@@ -78,7 +78,7 @@ Chrome用の拡張機能が提供されています。
 
 ![拡張機能デモ](./translate-demo.gif)
 
-https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj?hl=ja
+[$card](https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj?hl=ja)
 
 ---
 

@@ -25,7 +25,7 @@ npmを知るためには、Node.jsについて知る必要があります。
 
 > Node.js® は、Chrome の V8 JavaScript エンジン で動作する JavaScript 環境です。
 
-https://nodejs.org/ja/
+[$card](https://nodejs.org/ja/)
 
 誤解を恐れず公式の説明を噛みくだいてみます。
 Node.jsをインストールすればパソコンでJavaScriptファイルを実行できるようになるぞ！になるでしょう。
@@ -80,7 +80,7 @@ npmはNode Package Managerという名の通り、Node.jsで動くパッケー�
 > 
 > npmは、開発者がこれらのパッケージをインストールし、公開するためのコマンドラインクライアントです。
 
-https://www.npmjs.com/about
+[$card](https://www.npmjs.com/about)
 
 npmと呼ばれるものにはいくつか意味があるようです。
 
@@ -100,7 +100,7 @@ yarnはnpmの改良版として、旧Facebook社によって開発されまし�
 ではなぜ開発されたのかというと。npmには、当初はバージョン管理やパフォーマンス、セキュリティの問題が山積していたためです。
 しかし、yarn側の機能がnpmにも取り込まれていき、現在では気にするほどの違いはないようです。
 
-https://yarnpkg.com/
+[$card](https://yarnpkg.com/)
 
 # npxとは
 
