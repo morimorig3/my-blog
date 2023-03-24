@@ -24,6 +24,11 @@ pre[class*='language-'] {
   padding: 24px;
   overflow: auto;
 }
+@container (min-width: 768px) {
+  pre[class*='language-'] {
+    padding: 30px;
+  }
+}
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
   background: #2d2d2d;
