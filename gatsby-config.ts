@@ -20,12 +20,6 @@ const config: GatsbyConfig = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-link-beautify`,
-            options: {
-              enableLinkPreview: false,
-            },
-          },
-          {
             resolve: `gatsby-remark-component-parent2div`,
             options: { components: ['notice'] },
           },
