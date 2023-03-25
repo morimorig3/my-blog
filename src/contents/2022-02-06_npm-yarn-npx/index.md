@@ -4,16 +4,16 @@ createdAt: 2022-02-06
 updatedAt: 2022-02-06
 category: [think]
 slug: npm-yarn-npx
-keyVisual: "../2023-02-24_first-article/key-visual.jpg"
+keyVisual: "./kv.jpg"
 author: morimorig3
 ---
 
-# npmとyarnとnpxを説明できるようになる
+## npmとyarnとnpxを説明できるようになる
 
 今やフロントエンド開発に欠かせないコマンドラインツールであるnpmですが、npmって結局何なのと言われるとうまく説明できないなと感じました。
 npm・yarn・npxを知らない人に簡単に説明できるレベルなれるようなレベルを目指したいと思います。
 
-# Node.jsとは
+## Node.jsとは
 
 npmを知るためには、Node.jsについて知る必要があります。
 
@@ -45,8 +45,10 @@ Node.jsをインストールすればコマンドラインツール（黒い画�
 node helloworld.js // hello, world
 ```
 
-:::details ChromeのV8 JavaScriptエンジンとは
-## JavaScriptエンジン
+<details>
+<summary>ChromeのV8 JavaScriptエンジンとは</summary>
+
+### JavaScriptエンジン
 
 なぜブラウザでJavaScriptが動くのか？というと、ブラウザにJavaScriptエンジンが実装されているからです。
 
@@ -59,9 +61,10 @@ node helloworld.js // hello, world
 たとえるなら車のエンジンと同じです。トヨタのエンジン・ホンダのエンジン・マツダのエンジンなど、車を動かすという目的は同じですが、仕組みは違っています。
 
 Node.jsは、ブラウザ以外でJavaScriptを実行する環境です。そして、動かしているエンジンはChromeと同じV8エンジンということになります。
-:::
 
-# npmとは
+</details>
+
+## npmとは
 
 **npmで提供されているパッケージを管理するコマンドラインツールです。**
 
@@ -80,7 +83,7 @@ npmはNode Package Managerという名の通り、Node.jsで動くパッケー�
 > 
 > npmは、開発者がこれらのパッケージをインストールし、公開するためのコマンドラインクライアントです。
 
-[$card](https://www.npmjs.com/about)
+[npm公式](https://www.npmjs.com/about)
 
 npmと呼ばれるものにはいくつか意味があるようです。
 
@@ -90,7 +93,7 @@ npmと呼ばれるものにはいくつか意味があるようです。
 
 話の中でnpmが出てきたときは、3つ目のコマンドラインクライアントとしてのnpmと捉えれば問題ないでしょう。
 
-# yarnとは
+## yarnとは
 
 **npmの改良版として登場しましたが、現在はnpmとyarnの違いはほとんどありません。**
 
@@ -100,9 +103,9 @@ yarnはnpmの改良版として、旧Facebook社によって開発されまし�
 ではなぜ開発されたのかというと。npmには、当初はバージョン管理やパフォーマンス、セキュリティの問題が山積していたためです。
 しかし、yarn側の機能がnpmにも取り込まれていき、現在では気にするほどの違いはないようです。
 
-[$card](https://yarnpkg.com/)
+[yarn公式](https://yarnpkg.com/)
 
-# npxとは
+## npxとは
 
 **npmで提供されているパッケージをマシン上へインストールせずに、1回限り実行するときに便利なコマンドです。**
 
@@ -110,14 +113,14 @@ npxとは、npmパッケージで提供されているプログラムを実行�
 
 create-react-appなど、1回限りのコマンドを実行するときに有効です。ディスクの容量も節約することができる上に、ムダなものをインストールせずに済みます。
 
-# まとめ
+## まとめ
 
 Node.jsは個人的に理解しにくい概念だと思っていました。名前のせいもあると思うんですが…（拡張子がjsでJavaScriptの実行環境？ってのが知らない人からすればわかりづらい）
 調べてみて感じたのは、Node.jsのエコシステムの広がりはオープンソースの素晴らしいところだと思いました。開発者同士で協力してみんなハッピーになろうぜ！みたいなコミュニティの雰囲気が伝わってきて、自分もいつか貢献してみたいと思いました。
 
 npmやyarn、npxについて納得していただければ幸いです。（わからなかった方は参考によりわかりやすいリンク貼っておくので、みにいってください汗）
 
-# 参考
+## 参考
 
 - [Node.js](https://nodejs.org/ja/)
 - [npm](https://www.npmjs.com/)

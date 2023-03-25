@@ -4,13 +4,11 @@ createdAt: 2021-12-30
 updatedAt: 2021-12-30
 category: [think]
 slug: tech-stack-of-my-site
-keyVisual: "../2023-02-24_first-article/key-visual.jpg"
+keyVisual: "./kv.jpg"
 author: morimorig3
 ---
 
-# マイサイトの技術スタック
-
-# 構成
+## 構成
 
 - React (17.0.2)
 - Next.js (12.0.7)
@@ -18,7 +16,7 @@ author: morimorig3
 - CMS contentful
 - ホスト　vercel
 
-# 試したかったこと
+## 試したかったこと
 
 **JAMstackでページ作りたかった。** 変化が早いとはいえ、まだ死語じゃないですよね？
 
@@ -29,7 +27,7 @@ author: morimorig3
 - 高いパフォーマンス
 - スケーラビリティ
 
-# UIライブラリ
+## UIライブラリ
 
 UIライブラリはまだReactしか使えないため、Reactです。
 
@@ -40,11 +38,11 @@ Next.jsは公式ドキュメントが有志によって日本語されていた�
 
 >ユーザーにとってはより速く、開発者にとってはより開発しやすく。ウェブの新時代はまだ始まったばかりです。
 
-[$card](https://nextjs.org/)
+[Next.js](https://nextjs.org/)
 
-[$card](https://www.gatsbyjs.com/)
+[Gatsby.js](https://www.gatsbyjs.com/)
 
-# スタイル
+## スタイル
 
 スタイルに関しては、個人的に使いやすいと感じているtailwindCSSを選択してしまいました。
 
@@ -52,18 +50,18 @@ tailwindCSSが圧倒的に描きやすいと思っているが、市場のコー
 
 tailwindもコードの見通しがすぐに悪くなるから決して最強というわけじゃないんだけど・・・CSSって難しいですね。
 
-[$card](https://tailwindcss.com/)
+[Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.d](https://tailwindcss.com/)
 
-# ヘッドレスCMS
+## ヘッドレスCMS
 
 コンテンツの管理を任せるCMSですが、こちらも情報の多さを重視しました。最近よく聞くmicroCMSや一度お世話になったこともあるcontentfulで迷いました。
 日本製のmicroCMSは公式ドキュメントが読みやすく使い勝手もいいだろうと思いましたが、Qiitaの検索でcontentfulの方が2倍以上の記事数があるcontentfulを採用しました。
 
-[$card](https://www.contentful.com/)
+[The platform to bring your best ideas to life | Contentful](https://www.contentful.com/)
 
-[$card](https://document.microcms.io/)
+[microCMS公式ドキュメント](https://document.microcms.io/)
 
-# ホスティングサービス
+## ホスティングサービス
 
 Next.jsなのでVercel一択
 
@@ -71,17 +69,17 @@ Next.jsなのでVercel一択
 
 pushがトリガーになって、サーバー側のNode.jsでbuildコマンドが叩かれてpublicディレクトリに吐き出さているんだろうと信じています。
 
-# デザイン
+## デザイン
 
 デザインについては、本業でもなく深く勉強をしたこともないので、プロフェッショナル達の作品を参考にさせていただきました。
 
-[$card](https://nextjs.org/)
+[Next.js by Vercel - The React Framework](https://nextjs.org/)
 
-[$card](https://ja.reactjs.org/)
+[React – ユーザインターフェース構築のための JavaScript ライブラリ](https://ja.reactjs.org/)
 
-[$card](https://engineering.mercari.com/)
+[メルカリエンジニアリング](https://engineering.mercari.com/)
 
-[$card](https://zenn.dev/)
+[Zenn｜エンジニアのための情報共有コミュニティ](https://zenn.dev/)
 
 ---
 ひとまずやりたいことはできたかなというところでございます。
