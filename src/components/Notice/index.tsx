@@ -30,7 +30,7 @@ export const Notice = (props: any): JSX.Element => {
   return (
     <div className={`${styles.notice} ${type.style}`}>
       <type.icon size="24px" />
-      <p>{props.children}</p>
+      <div>{props.children}</div>
     </div>
   );
 };

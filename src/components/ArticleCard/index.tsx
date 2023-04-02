@@ -19,8 +19,8 @@ export const ArticleCard = ({ title, slug, keyVisual, createdAt }: Props) => {
         <div className={styles.article__keyVisual}>
           <GatsbyImage
             className={styles.article__image}
-            image={keyVisual.childImageSharp.gatsbyImageData} // TODO: アサーション
-            alt="keyVisual"
+            image={keyVisual.childImageSharp.gatsbyImageData}
+            alt={title}
             as="figure"
           />
         </div>
